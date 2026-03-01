@@ -1,0 +1,13 @@
+/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/bin/Release/net8.0/Contracts.deps.json
+/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/bin/Release/net8.0/Contracts.dll
+/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/bin/Release/net8.0/Contracts.pdb
+/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/bin/Release/net8.0/Contracts.xml
+/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/obj/Release/net8.0/Contracts.GeneratedMSBuildEditorConfig.editorconfig
+/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/obj/Release/net8.0/Contracts.AssemblyInfoInputs.cache
+/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/obj/Release/net8.0/Contracts.AssemblyInfo.cs
+/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/obj/Release/net8.0/Contracts.csproj.CoreCompileInputs.cache
+/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/obj/Release/net8.0/Contracts.dll
+/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/obj/Release/net8.0/refint/Contracts.dll
+/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/obj/Release/net8.0/Contracts.xml
+/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/obj/Release/net8.0/Contracts.pdb
+/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/obj/Release/net8.0/ref/Contracts.dll

@@ -1,0 +1,42 @@
+-- 1) Databases
+CREATE DATABASE fcg_users_db;
+CREATE DATABASE fcg_catalog_db;
+CREATE DATABASE fcg_payments_db;
+CREATE DATABASE fcg_notifications_db;
+
+-- 2) Users (roles)
+CREATE USER users WITH PASSWORD 'userspw';
+CREATE USER catalog WITH PASSWORD 'catalogpw';
+CREATE USER payments WITH PASSWORD 'paymentspw';
+CREATE USER notifications WITH PASSWORD 'notificationspw';
+
+-- 3) Grants no nível do DATABASE (conexão)
+GRANT CONNECT, TEMPORARY ON DATABASE fcg_users_db TO users;
+GRANT CONNECT, TEMPORARY ON DATABASE fcg_catalog_db TO catalog;
+GRANT CONNECT, TEMPORARY ON DATABASE fcg_payments_db TO payments;
+GRANT CONNECT, TEMPORARY ON DATABASE fcg_notifications_db TO notifications;
+
+-- 4) Grants no schema public (é isso que resolve o EF migrations)
+\connect fcg_users_db
+GRANT USAGE, CREATE ON SCHEMA public TO users;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO users;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO users;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON FUNCTIONS TO users;
+
+\connect fcg_catalog_db
+GRANT USAGE, CREATE ON SCHEMA public TO catalog;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO catalog;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO catalog;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON FUNCTIONS TO catalog;
+
+\connect fcg_payments_db
+GRANT USAGE, CREATE ON SCHEMA public TO payments;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO payments;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO payments;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON FUNCTIONS TO payments;
+
+\connect fcg_notifications_db
+GRANT USAGE, CREATE ON SCHEMA public TO notifications;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO notifications;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO notifications;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON FUNCTIONS TO notifications;

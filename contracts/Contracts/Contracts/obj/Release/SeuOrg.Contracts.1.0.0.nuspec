@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SeuOrg.Contracts</id>
+    <version>1.0.0</version>
+    <authors>Seu Nome/Org</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <readme>README.md</readme>
+    <description>Eventos de integração compartilhados.</description>
+    <tags>events integration contracts</tags>
+    <repository type="git" url="https://seu-repo" />
+    <dependencies>
+      <group targetFramework="net8.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/bin/Release/net8.0/Contracts.dll" target="lib/net8.0/Contracts.dll" />
+    <file src="/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/bin/Release/net8.0/Contracts.xml" target="lib/net8.0/Contracts.xml" />
+    <file src="/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/README.md" target="README.md" />
+  </files>
+</package>
