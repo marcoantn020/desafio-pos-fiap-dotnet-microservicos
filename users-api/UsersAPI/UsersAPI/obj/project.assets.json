@@ -3847,6 +3847,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj",
       "MassTransit >= 8.0.11",
       "MassTransit.EntityFrameworkCore >= 8.0.11",
       "MassTransit.RabbitMQ >= 8.0.11",
@@ -3884,7 +3885,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj": {
+              "projectPath": "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -3971,5 +3976,16 @@
         "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.417/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for '/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

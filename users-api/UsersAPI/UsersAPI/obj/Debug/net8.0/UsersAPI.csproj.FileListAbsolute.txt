@@ -133,3 +133,4 @@
 /home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/obj/Debug/net8.0/UsersAPI.genruntimeconfig.cache
 /home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/obj/Debug/net8.0/ref/UsersAPI.dll
 /home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/bin/Debug/net8.0/Contracts.dll
+/home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/obj/Debug/net8.0/UsersAPI.sourcelink.json

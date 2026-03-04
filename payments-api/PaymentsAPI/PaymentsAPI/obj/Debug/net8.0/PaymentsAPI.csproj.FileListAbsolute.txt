@@ -120,3 +120,4 @@
 /home/marco/POS/microservicos-POS/FIAPGame/payments-api/PaymentsAPI/PaymentsAPI/obj/Debug/net8.0/PaymentsAPI.genruntimeconfig.cache
 /home/marco/POS/microservicos-POS/FIAPGame/payments-api/PaymentsAPI/PaymentsAPI/obj/Debug/net8.0/ref/PaymentsAPI.dll
 /home/marco/POS/microservicos-POS/FIAPGame/payments-api/PaymentsAPI/PaymentsAPI/bin/Debug/net8.0/Contracts.dll
+/home/marco/POS/microservicos-POS/FIAPGame/payments-api/PaymentsAPI/PaymentsAPI/obj/Debug/net8.0/PaymentsAPI.sourcelink.json

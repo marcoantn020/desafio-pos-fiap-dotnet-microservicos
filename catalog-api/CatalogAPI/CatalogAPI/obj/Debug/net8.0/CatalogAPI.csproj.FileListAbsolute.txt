@@ -129,3 +129,4 @@
 /home/marco/POS/microservicos-POS/FIAPGame/catalog-api/CatalogAPI/CatalogAPI/obj/Debug/net8.0/CatalogAPI.pdb
 /home/marco/POS/microservicos-POS/FIAPGame/catalog-api/CatalogAPI/CatalogAPI/obj/Debug/net8.0/CatalogAPI.genruntimeconfig.cache
 /home/marco/POS/microservicos-POS/FIAPGame/catalog-api/CatalogAPI/CatalogAPI/obj/Debug/net8.0/ref/CatalogAPI.dll
+/home/marco/POS/microservicos-POS/FIAPGame/catalog-api/CatalogAPI/CatalogAPI/obj/Debug/net8.0/CatalogAPI.sourcelink.json
