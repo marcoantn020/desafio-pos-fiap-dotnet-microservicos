@@ -14,7 +14,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj",
-      "projectName": "SeuOrg.Contracts",
+      "projectName": "FIAPCloudGames2026.Contracts",
       "projectPath": "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj",
       "packagesPath": "/home/marco/.nuget/packages/",
       "outputPath": "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/obj/",

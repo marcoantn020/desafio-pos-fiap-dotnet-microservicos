@@ -54,7 +54,6 @@ public static class AuthEndpoints
         await userManager.AddToRoleAsync(user, defaultRole);
 
         // força persistir alterações do Identity no mesmo contexto
-        await dbContext.SaveChangesAsync();
 
         var evt = new UserCreatedEventV1(
             EventId: Guid.NewGuid(),

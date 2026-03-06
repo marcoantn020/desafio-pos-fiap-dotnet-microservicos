@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "UsersAPI/1.0.0": {
         "dependencies": {
+          "FIAPCloudGames2026.Contracts": "1.0.0",
           "MassTransit": "8.0.11",
           "MassTransit.EntityFrameworkCore": "8.0.11",
           "MassTransit.RabbitMQ": "8.0.11",
@@ -22,6 +23,14 @@
         },
         "runtime": {
           "UsersAPI.dll": {}
+        }
+      },
+      "FIAPCloudGames2026.Contracts/1.0.0": {
+        "runtime": {
+          "lib/net8.0/Contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Humanizer.Core/2.14.1": {
@@ -721,14 +730,7 @@
           }
         }
       },
-      "SeuOrg.Contracts/1.0.0": {
-        "runtime": {
-          "lib/net8.0/Contracts.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
+      "SeuOrg.Contracts/1.0.0": {},
       "Swashbuckle.AspNetCore/6.6.2": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
@@ -891,6 +893,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "FIAPCloudGames2026.Contracts/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZRzjNRKjWmzo6H8SHq1lacdSUHXBFytypUyoSC9ykkl2VsiXR6YDDkt0d8wBNT+88aHPI09FU+MUROzKEakg9g==",
+      "path": "fiapcloudgames2026.contracts/1.0.0",
+      "hashPath": "fiapcloudgames2026.contracts.1.0.0.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",

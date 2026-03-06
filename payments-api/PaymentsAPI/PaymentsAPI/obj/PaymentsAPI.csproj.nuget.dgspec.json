@@ -43,6 +43,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FIAPCloudGames2026.Contracts": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "MassTransit": {
               "target": "Package",
               "version": "[8.0.11, )"
@@ -72,10 +76,6 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.11, )"
-            },
-            "SeuOrg.Contracts": {
-              "target": "Package",
-              "version": "[1.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

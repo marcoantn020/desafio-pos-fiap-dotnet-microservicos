@@ -9,13 +9,14 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
-        <PackageId>SeuOrg.Contracts</PackageId>
+        <PackageId>FIAPCloudGames2026.Contracts</PackageId>
         <Version>1.0.0</Version>
-        <Authors>Seu Nome/Org</Authors>
-        <Company>Seu Nome/Org</Company>
+        <Authors>No Pay No Games Studio</Authors>
+        <Company>No Pay No Games Studio</Company>
         <Description>Eventos de integração compartilhados.</Description>
-        <PackageTags>events;integration;contracts</PackageTags>
-        <RepositoryUrl>https://seu-repo</RepositoryUrl>
+        <PackageTags>events integration contracts</PackageTags>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/marcoantn020/desafio-pos-fiap-dotnet-microservicos/tree/main/contracts/Contracts/Contracts</RepositoryUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
 
         <PackageReadmeFile>README.md</PackageReadmeFile>

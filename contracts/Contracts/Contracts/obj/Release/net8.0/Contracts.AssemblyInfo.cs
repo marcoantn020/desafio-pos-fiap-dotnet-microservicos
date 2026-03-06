@@ -10,15 +10,16 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Seu Nome/Org")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("No Pay No Games Studio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Eventos de integração compartilhados.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2441dbdce1a40d681d3e158b21483a6ac480449")]
 [assembly: System.Reflection.AssemblyProductAttribute("Contracts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Contracts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://seu-repo")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/marcoantn020/desafio-pos-fiap-dotnet-microservicos/tree/main/c" +
+    "ontracts/Contracts/Contracts")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
 

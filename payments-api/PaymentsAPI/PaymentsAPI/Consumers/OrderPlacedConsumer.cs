@@ -1,3 +1,4 @@
+
 using Contracts.IntegrationEvents;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;

@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "FIAPCloudGames2026.Contracts/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Contracts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Contracts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -1447,6 +1460,20 @@
     }
   },
   "libraries": {
+    "FIAPCloudGames2026.Contracts/1.0.0": {
+      "sha512": "ZRzjNRKjWmzo6H8SHq1lacdSUHXBFytypUyoSC9ykkl2VsiXR6YDDkt0d8wBNT+88aHPI09FU+MUROzKEakg9g==",
+      "type": "package",
+      "path": "fiapcloudgames2026.contracts/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fiapcloudgames2026.contracts.1.0.0.nupkg.sha512",
+        "fiapcloudgames2026.contracts.nuspec",
+        "lib/net8.0/Contracts.dll",
+        "lib/net8.0/Contracts.xml"
+      ]
+    },
     "Humanizer.Core/2.14.1": {
       "sha512": "lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "type": "package",
@@ -3847,7 +3874,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj",
+      "FIAPCloudGames2026.Contracts >= 1.0.0",
       "MassTransit >= 8.0.11",
       "MassTransit.EntityFrameworkCore >= 8.0.11",
       "MassTransit.RabbitMQ >= 8.0.11",
@@ -3885,11 +3912,7 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {
-            "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj": {
-              "projectPath": "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -3907,6 +3930,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "FIAPCloudGames2026.Contracts": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "MassTransit": {
             "target": "Package",
             "version": "[8.0.11, )"
@@ -3976,16 +4003,5 @@
         "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.417/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for '/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

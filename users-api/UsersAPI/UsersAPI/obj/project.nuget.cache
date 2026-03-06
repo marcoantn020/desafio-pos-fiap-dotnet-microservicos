@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "J4NqzwbHcOc=",
-  "success": false,
+  "dgSpecHash": "mEZryXox3u0=",
+  "success": true,
   "projectFilePath": "/home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/UsersAPI.csproj",
   "expectedPackageFiles": [
+    "/home/marco/.nuget/packages/fiapcloudgames2026.contracts/1.0.0/fiapcloudgames2026.contracts.1.0.0.nupkg.sha512",
     "/home/marco/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/marco/.nuget/packages/masstransit/8.0.11/masstransit.8.0.11.nupkg.sha512",
     "/home/marco/.nuget/packages/masstransit.abstractions/8.0.11/masstransit.abstractions.8.0.11.nupkg.sha512",
@@ -81,17 +82,5 @@
     "/home/marco/.nuget/packages/system.text.json/6.0.2/system.text.json.6.0.2.nupkg.sha512",
     "/home/marco/.nuget/packages/system.threading.channels/6.0.0/system.threading.channels.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for '/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "projectPath": "/home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/UsersAPI.csproj",
-      "filePath": "/home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/UsersAPI.csproj",
-      "libraryId": "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }
