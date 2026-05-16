@@ -1,4 +1,5 @@
 using System.Text;
+using System.Text.Json.Serialization;
 using CatalogAPI.API.Endpoints;
 using CatalogAPI.Consumers;
 using CatalogAPI.Infrastructure.Persistence;
@@ -12,6 +13,10 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
 
 builder.Services.AddDbContext<CatalogDbContext>(opt =>
 {
