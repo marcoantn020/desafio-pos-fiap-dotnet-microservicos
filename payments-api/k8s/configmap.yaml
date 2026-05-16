@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: payments-api-config
+data:
+  ASPNETCORE_URLS: http://+:8080
+  RabbitMq__Host: rabbitmq
+  RabbitMq__VirtualHost: /
+  RabbitMq__Username: guest
+  PaymentSimulation__ApprovalRatePercent: "80"

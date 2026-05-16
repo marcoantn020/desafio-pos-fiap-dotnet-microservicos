@@ -133,4 +133,10 @@ app.MapGamesEndpoints();
 app.MapOrdersEndpoints();
 app.MapLibraryEndpoints();
 
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<CatalogDbContext>();
+    await db.Database.MigrateAsync();
+}
+
 app.Run();

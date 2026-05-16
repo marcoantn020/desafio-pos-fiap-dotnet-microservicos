@@ -129,6 +129,8 @@ app.MapAuthEndpoints();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
+    var db = services.GetRequiredService<UsersDbContext>();
+    await db.Database.MigrateAsync();
     await UsersAPI.Infrastructure.Identity.RoleSeeder.SeedAsync(services);
 }
 

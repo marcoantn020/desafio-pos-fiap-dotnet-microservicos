@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/UsersAPI.csproj": {}
+    "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/users-api/UsersAPI/UsersAPI/UsersAPI.csproj": {}
   },
   "projects": {
-    "/home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/UsersAPI.csproj": {
+    "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/users-api/UsersAPI/UsersAPI/UsersAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/UsersAPI.csproj",
+        "projectUniqueName": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/users-api/UsersAPI/UsersAPI/UsersAPI.csproj",
         "projectName": "UsersAPI",
-        "projectPath": "/home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/UsersAPI.csproj",
+        "projectPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/users-api/UsersAPI/UsersAPI/UsersAPI.csproj",
         "packagesPath": "/home/marco/.nuget/packages/",
-        "outputPath": "/home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/obj/",
+        "outputPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/users-api/UsersAPI/UsersAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+          "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/nuget.config",
           "/home/marco/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/nuget-local": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -85,10 +82,6 @@
               "target": "Package",
               "version": "[8.0.11, )"
             },
-            "SeuOrg.Contracts": {
-              "target": "Package",
-              "version": "[1.0.0, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
@@ -113,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.417/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.126/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

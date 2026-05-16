@@ -1,0 +1,138 @@
+services:
+
+  # ─── Infrastructure ───────────────────────────────────────────────────────────
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: fcg-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  postgres:
+    image: postgres:16
+    container_name: fcg-postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: fcg
+      POSTGRES_PASSWORD: fcgpw
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./infra/postgres/init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fcg -d postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
+  # ─── Application Services ─────────────────────────────────────────────────────
+
+  users-api:
+    build:
+      context: .
+      dockerfile: users-api/Dockerfile
+    container_name: fcg-users-api
+    ports:
+      - "5001:8080"
+    environment:
+      ASPNETCORE_URLS: http://+:8080
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Default: "Host=postgres;Port=5432;Database=fcg_users_db;Username=users;Password=userspw"
+      Jwt__Issuer: "fcg.users"
+      Jwt__Audience: "fcg"
+      Jwt__Key: "CHANGE-ME-VERY-LONG-SECRET-KEY-AT-LEAST-32-CHARS"
+      RabbitMq__Host: rabbitmq
+      RabbitMq__Username: guest
+      RabbitMq__Password: guest
+      RabbitMq__VirtualHost: "/"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    restart: on-failure
+
+  catalog-api:
+    build:
+      context: .
+      dockerfile: catalog-api/Dockerfile
+    container_name: fcg-catalog-api
+    ports:
+      - "5002:8080"
+    environment:
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__Default: "Host=postgres;Port=5432;Database=fcg_catalog_db;Username=catalog;Password=catalogpw"
+      Jwt__Issuer: "fcg.users"
+      Jwt__Audience: "fcg"
+      Jwt__Key: "CHANGE-ME-VERY-LONG-SECRET-KEY-AT-LEAST-32-CHARS"
+      RabbitMq__Host: rabbitmq
+      RabbitMq__Username: guest
+      RabbitMq__Password: guest
+      RabbitMq__VirtualHost: "/"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    restart: on-failure
+
+  payments-api:
+    build:
+      context: .
+      dockerfile: payments-api/Dockerfile
+    container_name: fcg-payments-api
+    ports:
+      - "5003:8080"
+    environment:
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__Default: "Host=postgres;Port=5432;Database=fcg_payments_db;Username=payments;Password=paymentspw"
+      RabbitMq__Host: rabbitmq
+      RabbitMq__Username: guest
+      RabbitMq__Password: guest
+      RabbitMq__VirtualHost: "/"
+      PaymentSimulation__ApprovalRatePercent: "80"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    restart: on-failure
+
+  notifications-api:
+    build:
+      context: .
+      dockerfile: notications-api/Dockerfile
+    container_name: fcg-notifications-api
+    ports:
+      - "5004:8080"
+    environment:
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__Default: "Host=postgres;Port=5432;Database=fcg_notifications_db;Username=notifications;Password=notificationspw"
+      RabbitMq__Host: rabbitmq
+      RabbitMq__Username: guest
+      RabbitMq__Password: guest
+      RabbitMq__VirtualHost: "/"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    restart: on-failure
+
+volumes:
+  rabbitmq_data:
+  pg_data:

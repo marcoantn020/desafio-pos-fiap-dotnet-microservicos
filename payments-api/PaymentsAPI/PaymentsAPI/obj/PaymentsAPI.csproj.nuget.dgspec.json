@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/marco/POS/microservicos-POS/FIAPGame/payments-api/PaymentsAPI/PaymentsAPI/PaymentsAPI.csproj": {}
+    "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/payments-api/PaymentsAPI/PaymentsAPI/PaymentsAPI.csproj": {}
   },
   "projects": {
-    "/home/marco/POS/microservicos-POS/FIAPGame/payments-api/PaymentsAPI/PaymentsAPI/PaymentsAPI.csproj": {
+    "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/payments-api/PaymentsAPI/PaymentsAPI/PaymentsAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/marco/POS/microservicos-POS/FIAPGame/payments-api/PaymentsAPI/PaymentsAPI/PaymentsAPI.csproj",
+        "projectUniqueName": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/payments-api/PaymentsAPI/PaymentsAPI/PaymentsAPI.csproj",
         "projectName": "PaymentsAPI",
-        "projectPath": "/home/marco/POS/microservicos-POS/FIAPGame/payments-api/PaymentsAPI/PaymentsAPI/PaymentsAPI.csproj",
+        "projectPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/payments-api/PaymentsAPI/PaymentsAPI/PaymentsAPI.csproj",
         "packagesPath": "/home/marco/.nuget/packages/",
-        "outputPath": "/home/marco/POS/microservicos-POS/FIAPGame/payments-api/PaymentsAPI/PaymentsAPI/obj/",
+        "outputPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/payments-api/PaymentsAPI/PaymentsAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+          "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/nuget.config",
           "/home/marco/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/nuget-local": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -101,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.417/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.126/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

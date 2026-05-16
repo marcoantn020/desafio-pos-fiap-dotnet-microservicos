@@ -70,4 +70,10 @@ var app = builder.Build();
 app.MapHealthChecks("/health");
 app.MapGet("/", () => Results.Ok(new { service = "PaymentsAPI", status = "ok" }));
 
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<PaymentsDbContext>();
+    await db.Database.MigrateAsync();
+}
+
 app.Run();

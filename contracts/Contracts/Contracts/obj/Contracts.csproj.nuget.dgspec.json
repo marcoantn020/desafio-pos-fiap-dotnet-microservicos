@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj": {}
+    "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/contracts/Contracts/Contracts/Contracts.csproj": {}
   },
   "projects": {
-    "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj": {
+    "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/contracts/Contracts/Contracts/Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj",
+        "projectUniqueName": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/contracts/Contracts/Contracts/Contracts.csproj",
         "projectName": "FIAPCloudGames2026.Contracts",
-        "projectPath": "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj",
+        "projectPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/contracts/Contracts/Contracts/Contracts.csproj",
         "packagesPath": "/home/marco/.nuget/packages/",
-        "outputPath": "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/obj/",
+        "outputPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/contracts/Contracts/Contracts/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+          "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/nuget.config",
           "/home/marco/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/nuget-local": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -58,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.417/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.126/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HMRuunHRZdM=",
+  "dgSpecHash": "4nyScR9/EMdBO3XbqvXyOPE1Av28z3qWdRWketBbpQX+tExOGnezw5AbHbxfEACSrD4I1a5zlngjrmPZM0RQMQ==",
   "success": true,
-  "projectFilePath": "/home/marco/POS/microservicos-POS/FIAPGame/payments-api/PaymentsAPI/PaymentsAPI/PaymentsAPI.csproj",
+  "projectFilePath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/payments-api/PaymentsAPI/PaymentsAPI/PaymentsAPI.csproj",
   "expectedPackageFiles": [
     "/home/marco/.nuget/packages/fiapcloudgames2026.contracts/1.0.0/fiapcloudgames2026.contracts.1.0.0.nupkg.sha512",
     "/home/marco/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

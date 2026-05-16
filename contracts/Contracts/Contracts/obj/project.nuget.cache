@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JY9qIoXzOA4=",
+  "dgSpecHash": "Eq5VhxuPwizPM4YWSxA8n3uWwnvW4B8kcKvUI5YpdzuHnD/IsDwKp4xId/cpXRX0HDqT+6v6UcrxD5AoPJG6nA==",
   "success": true,
-  "projectFilePath": "/home/marco/POS/microservicos-POS/FIAPGame/contracts/Contracts/Contracts/Contracts.csproj",
+  "projectFilePath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/contracts/Contracts/Contracts/Contracts.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

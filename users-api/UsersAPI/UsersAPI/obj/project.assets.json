@@ -1047,19 +1047,6 @@
           }
         }
       },
-      "SeuOrg.Contracts/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Contracts.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Contracts.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Swashbuckle.AspNetCore/6.6.2": {
         "type": "package",
         "dependencies": {
@@ -3177,19 +3164,6 @@
         "rabbitmq.client.nuspec"
       ]
     },
-    "SeuOrg.Contracts/1.0.0": {
-      "sha512": "6uh8nmnRfKENiK0RaE6d5PDOTkF+L/AMg6vqDH8z1uyLEwemOlq20auUn2Diu2F49iBc7EZlGtXT5P7zx3FVog==",
-      "type": "package",
-      "path": "seuorg.contracts/1.0.0",
-      "files": [
-        ".nupkg.metadata",
-        "README.md",
-        "lib/net8.0/Contracts.dll",
-        "lib/net8.0/Contracts.xml",
-        "seuorg.contracts.1.0.0.nupkg.sha512",
-        "seuorg.contracts.nuspec"
-      ]
-    },
     "Swashbuckle.AspNetCore/6.6.2": {
       "sha512": "+NB4UYVYN6AhDSjW0IJAd1AGD8V33gemFNLPaxKTtPkHB+HaKAKf9MGAEUPivEWvqeQfcKIw8lJaHq6LHljRuw==",
       "type": "package",
@@ -3884,7 +3858,6 @@
       "Microsoft.EntityFrameworkCore.Design >= 8.0.11",
       "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore >= 8.0.11",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 8.0.11",
-      "SeuOrg.Contracts >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
@@ -3894,19 +3867,21 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/UsersAPI.csproj",
+      "projectUniqueName": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/users-api/UsersAPI/UsersAPI/UsersAPI.csproj",
       "projectName": "UsersAPI",
-      "projectPath": "/home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/UsersAPI.csproj",
+      "projectPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/users-api/UsersAPI/UsersAPI/UsersAPI.csproj",
       "packagesPath": "/home/marco/.nuget/packages/",
-      "outputPath": "/home/marco/POS/microservicos-POS/FIAPGame/users-api/UsersAPI/UsersAPI/obj/",
+      "outputPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/users-api/UsersAPI/UsersAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
+        "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/nuget.config",
         "/home/marco/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/nuget-local": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3919,11 +3894,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3972,10 +3942,6 @@
             "target": "Package",
             "version": "[8.0.11, )"
           },
-          "SeuOrg.Contracts": {
-            "target": "Package",
-            "version": "[1.0.0, )"
-          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.6.2, )"
@@ -4000,7 +3966,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.417/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.126/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
