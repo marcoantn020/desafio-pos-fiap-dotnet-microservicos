@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FCG.Monolith.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32bcc79098aed653f4597f48d0aab0bd020b26fb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+843ed5a6617b75258557fb9df56fb6d2e888c6af")]
 [assembly: System.Reflection.AssemblyProductAttribute("FCG.Monolith.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FCG.Monolith.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
