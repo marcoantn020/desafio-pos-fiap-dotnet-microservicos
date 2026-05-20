@@ -31,7 +31,7 @@ public class AuthController : ControllerBase
             return Conflict(new { error = "Email already registered." });
 
         var passwordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
-        var user = User.Create(request.Name, email.Value, passwordHash);
+        var user = FCG.Monolith.Domain.Entities.User.Create(request.Name, email.Value, passwordHash);
 
         await _userRepository.AddAsync(user, ct);
         await _userRepository.SaveChangesAsync(ct);
