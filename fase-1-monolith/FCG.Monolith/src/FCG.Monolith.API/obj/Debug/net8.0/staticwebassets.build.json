@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "EDIEaGiIzG1D/DwL6B96zM82Ug9ZIfIQI5JrsXUuUaE=",
+  "Source": "FCG.Monolith.API",
+  "BasePath": "_content/FCG.Monolith.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,237 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.API/FCG.Monolith.API.csproj": {}
+  },
+  "projects": {
+    "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.API/FCG.Monolith.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.API/FCG.Monolith.API.csproj",
+        "projectName": "FCG.Monolith.API",
+        "projectPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.API/FCG.Monolith.API.csproj",
+        "packagesPath": "/home/marco/.nuget/packages/",
+        "outputPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/nuget.config",
+          "/home/marco/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/nuget-local": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/FCG.Monolith.Domain.csproj": {
+                "projectPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/FCG.Monolith.Domain.csproj"
+              },
+              "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Infrastructure/FCG.Monolith.Infrastructure.csproj": {
+                "projectPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Infrastructure/FCG.Monolith.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.26, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.126/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/FCG.Monolith.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/FCG.Monolith.Domain.csproj",
+        "projectName": "FCG.Monolith.Domain",
+        "projectPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/FCG.Monolith.Domain.csproj",
+        "packagesPath": "/home/marco/.nuget/packages/",
+        "outputPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/nuget.config",
+          "/home/marco/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/nuget-local": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.126/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Infrastructure/FCG.Monolith.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Infrastructure/FCG.Monolith.Infrastructure.csproj",
+        "projectName": "FCG.Monolith.Infrastructure",
+        "projectPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Infrastructure/FCG.Monolith.Infrastructure.csproj",
+        "packagesPath": "/home/marco/.nuget/packages/",
+        "outputPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/nuget.config",
+          "/home/marco/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/nuget-local": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/FCG.Monolith.Domain.csproj": {
+                "projectPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/FCG.Monolith.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.126/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
