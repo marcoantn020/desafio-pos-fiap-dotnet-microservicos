@@ -1,0 +1,6 @@
+@FCG.Monolith.API_HostAddress = http://localhost:5257
+
+GET {{FCG.Monolith.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

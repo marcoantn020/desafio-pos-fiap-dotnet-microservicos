@@ -1,0 +1,12 @@
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/bin/Debug/net8.0/FCG.Monolith.Domain.deps.json
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/bin/Debug/net8.0/FCG.Monolith.Domain.dll
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/bin/Debug/net8.0/FCG.Monolith.Domain.pdb
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/obj/Debug/net8.0/FCG.Monolith.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/obj/Debug/net8.0/FCG.Monolith.Domain.AssemblyInfoInputs.cache
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/obj/Debug/net8.0/FCG.Monolith.Domain.AssemblyInfo.cs
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/obj/Debug/net8.0/FCG.Monolith.Domain.csproj.CoreCompileInputs.cache
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/obj/Debug/net8.0/FCG.Monolith.Domain.sourcelink.json
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/obj/Debug/net8.0/FCG.Monolith.Domain.dll
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/obj/Debug/net8.0/refint/FCG.Monolith.Domain.dll
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/obj/Debug/net8.0/FCG.Monolith.Domain.pdb
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/obj/Debug/net8.0/ref/FCG.Monolith.Domain.dll
