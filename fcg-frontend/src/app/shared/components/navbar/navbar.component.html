@@ -1,0 +1,22 @@
+<nav class="navbar">
+  <a class="brand" routerLink="/games">
+    <span class="brand-icon">🎮</span> FIAP Cloud Games
+  </a>
+
+  @if (auth.isLoggedIn()) {
+    <div class="nav-links">
+      <a routerLink="/games" routerLinkActive="active">Catálogo</a>
+      <a routerLink="/orders" routerLinkActive="active">Pedidos</a>
+      <a routerLink="/library" routerLinkActive="active">Biblioteca</a>
+    </div>
+    <div class="nav-user">
+      <span class="user-name">{{ user?.displayName }}</span>
+      <button class="btn-logout" (click)="logout()">Sair</button>
+    </div>
+  } @else {
+    <div class="nav-links">
+      <a routerLink="/login" routerLinkActive="active">Entrar</a>
+      <a routerLink="/register" routerLinkActive="active">Criar conta</a>
+    </div>
+  }
+</nav>

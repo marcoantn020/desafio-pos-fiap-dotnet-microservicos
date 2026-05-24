@@ -1,0 +1,38 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="auth-header">
+      <span class="logo">🎮</span>
+      <h1>FIAP Cloud Games</h1>
+      <p>Crie sua conta gratuita</p>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      @if (error) {
+        <div class="alert alert-error">{{ error }}</div>
+      }
+
+      <div class="field">
+        <label>Nome de exibição</label>
+        <input type="text" formControlName="displayName" placeholder="Seu nome" />
+      </div>
+
+      <div class="field">
+        <label>Email</label>
+        <input type="email" formControlName="email" placeholder="seu@email.com" />
+      </div>
+
+      <div class="field">
+        <label>Senha</label>
+        <input type="password" formControlName="password" placeholder="Mínimo 6 caracteres" />
+      </div>
+
+      <button class="btn-primary" type="submit" [disabled]="loading">
+        {{ loading ? 'Criando conta...' : 'Criar conta' }}
+      </button>
+    </form>
+
+    <p class="auth-link">
+      Já tem conta? <a routerLink="/login">Entrar</a>
+    </p>
+  </div>
+</div>

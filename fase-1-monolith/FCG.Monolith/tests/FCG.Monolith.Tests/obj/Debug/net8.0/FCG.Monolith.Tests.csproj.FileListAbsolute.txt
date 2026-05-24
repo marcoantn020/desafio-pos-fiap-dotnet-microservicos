@@ -122,3 +122,5 @@
 /home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/tests/FCG.Monolith.Tests/obj/Debug/net8.0/FCG.Monolith.Tests.pdb
 /home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/tests/FCG.Monolith.Tests/obj/Debug/net8.0/FCG.Monolith.Tests.genruntimeconfig.cache
 /home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/tests/FCG.Monolith.Tests/obj/Debug/net8.0/ref/FCG.Monolith.Tests.dll
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/tests/FCG.Monolith.Tests/bin/Debug/net8.0/FCG.Monolith.Application.dll
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/tests/FCG.Monolith.Tests/bin/Debug/net8.0/FCG.Monolith.Application.pdb

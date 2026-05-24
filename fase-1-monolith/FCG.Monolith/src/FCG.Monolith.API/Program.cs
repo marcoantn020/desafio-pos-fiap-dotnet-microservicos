@@ -1,5 +1,6 @@
 using System.Text;
 using FCG.Monolith.API.Middleware;
+using FCG.Monolith.Application;
 using FCG.Monolith.Domain.Enums;
 using FCG.Monolith.Domain.Entities;
 using FCG.Monolith.Domain.Interfaces;
@@ -59,6 +60,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 builder.Services.AddAuthorization();
+builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();

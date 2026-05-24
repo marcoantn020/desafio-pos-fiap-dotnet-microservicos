@@ -1,5 +1,5 @@
 using FCG.Monolith.API.DTOs.Users;
-using FCG.Monolith.Domain.Interfaces;
+using FCG.Monolith.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,21 +10,21 @@ namespace FCG.Monolith.API.Controllers;
 [Authorize(Roles = "Admin")]
 public class UsersController : ControllerBase
 {
-    private readonly IUserRepository _userRepository;
+    private readonly IUserService _userService;
 
-    public UsersController(IUserRepository userRepository) => _userRepository = userRepository;
+    public UsersController(IUserService userService) => _userService = userService;
 
     [HttpGet]
     public async Task<IActionResult> GetAll(CancellationToken ct)
     {
-        var users = await _userRepository.GetAllAsync(ct);
+        var users = await _userService.GetAllAsync(ct);
         return Ok(users.Select(u => new UserResponse(u.Id, u.Name, u.Email, u.Role.ToString(), u.CreatedAt)));
     }
 
     [HttpGet("{id:guid}")]
     public async Task<IActionResult> GetById(Guid id, CancellationToken ct)
     {
-        var user = await _userRepository.GetByIdAsync(id, ct);
+        var user = await _userService.GetByIdAsync(id, ct);
         if (user is null) return NotFound();
         return Ok(new UserResponse(user.Id, user.Name, user.Email, user.Role.ToString(), user.CreatedAt));
     }
@@ -32,10 +32,7 @@ public class UsersController : ControllerBase
     [HttpDelete("{id:guid}")]
     public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
     {
-        var user = await _userRepository.GetByIdAsync(id, ct);
-        if (user is null) return NotFound();
-        await _userRepository.DeleteAsync(user, ct);
-        await _userRepository.SaveChangesAsync(ct);
+        await _userService.DeleteAsync(id, ct);
         return NoContent();
     }
 }

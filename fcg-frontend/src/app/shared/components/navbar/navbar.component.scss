@@ -1,0 +1,66 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  height: 60px;
+  background: #0d0d0d;
+  border-bottom: 1px solid #1a1a2e;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .brand {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #00d4ff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: auto;
+
+    .brand-icon { font-size: 1.4rem; }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+
+      &:hover, &.active { color: #00d4ff; }
+    }
+  }
+
+  .nav-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 2rem;
+
+    .user-name {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.btn-logout {
+  background: transparent;
+  border: 1px solid #ff4444;
+  color: #ff4444;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #ff4444;
+    color: #fff;
+  }
+}

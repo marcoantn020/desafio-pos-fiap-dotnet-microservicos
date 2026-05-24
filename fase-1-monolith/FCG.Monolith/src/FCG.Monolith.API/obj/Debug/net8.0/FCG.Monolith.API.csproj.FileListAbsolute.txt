@@ -117,3 +117,5 @@
 /home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.API/obj/Debug/net8.0/FCG.Monolith.API.pdb
 /home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.API/obj/Debug/net8.0/FCG.Monolith.API.genruntimeconfig.cache
 /home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.API/obj/Debug/net8.0/ref/FCG.Monolith.API.dll
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.API/bin/Debug/net8.0/FCG.Monolith.Application.dll
+/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.API/bin/Debug/net8.0/FCG.Monolith.Application.pdb

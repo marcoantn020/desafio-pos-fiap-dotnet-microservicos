@@ -1,0 +1,186 @@
+<mxfile host="app.diagrams.net" modified="2026-05-24T00:00:00.000Z" version="21.0.0">
+  <diagram name="Context Map - FCG Bounded Contexts" id="context-map-fcg">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="Context Map — FCG (FIAP Cloud Games) Monolith" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="1000" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- BOUNDED CONTEXT 1: User Management                           -->
+        <!-- ============================================================ -->
+        <mxCell id="bc_user_container" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;User Management&lt;/font&gt;&lt;/b&gt;" style="swimlane;startSize=40;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#003399;rounded=1;arcSize=5;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="380" height="380" as="geometry" />
+        </mxCell>
+
+        <!-- User Aggregate -->
+        <mxCell id="agg_user" value="&lt;b&gt;User&lt;/b&gt;&#xa;(Aggregate Root)&#xa;─────────────────&#xa;+ Id: Guid&#xa;+ Name: string&#xa;+ Email: Email (VO)&#xa;+ PasswordHash: string&#xa;+ Role: enum (User/Admin)&#xa;+ CreatedAt: DateTime" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD700;strokeColor=#CC9900;fontColor=#1a1a1a;fontSize=11;align=left;" vertex="1" parent="bc_user_container">
+          <mxGeometry x="20" y="60" width="200" height="180" as="geometry" />
+        </mxCell>
+
+        <!-- Email Value Object -->
+        <mxCell id="vo_email" value="&lt;b&gt;Email&lt;/b&gt;&#xa;(Value Object)&#xa;─────────────────&#xa;+ Value: string&#xa;─────────────────&#xa;Regra: formato válido&#xa;ex: user@domain.com" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6D0FF;strokeColor=#9673A6;fontColor=#1a1a1a;fontSize=11;align=left;" vertex="1" parent="bc_user_container">
+          <mxGeometry x="240" y="60" width="120" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Password Value Object -->
+        <mxCell id="vo_password" value="&lt;b&gt;Password&lt;/b&gt;&#xa;(Value Object)&#xa;─────────────────&#xa;+ Hash: string&#xa;─────────────────&#xa;Regra: min 8 chars&#xa;upper+lower&#xa;+digit+special" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6D0FF;strokeColor=#9673A6;fontColor=#1a1a1a;fontSize=11;align=left;" vertex="1" parent="bc_user_container">
+          <mxGeometry x="240" y="220" width="120" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Endpoints in User Management -->
+        <mxCell id="ep_user" value="Endpoints:&#xa;POST /api/auth/register&#xa;POST /api/auth/login&#xa;→ Emite JWT" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#003399;fontSize=11;align=left;" vertex="1" parent="bc_user_container">
+          <mxGeometry x="20" y="290" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- VO ownership edges (inside container) -->
+        <mxCell id="e_user_email" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#9673A6;dashed=1;endArrow=open;" edge="1" source="agg_user" target="vo_email" parent="bc_user_container">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_user_pw" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#9673A6;dashed=1;endArrow=open;" edge="1" source="agg_user" target="vo_password" parent="bc_user_container">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- BOUNDED CONTEXT 2: Game Catalog                              -->
+        <!-- ============================================================ -->
+        <mxCell id="bc_catalog_container" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Game Catalog&lt;/font&gt;&lt;/b&gt;" style="swimlane;startSize=40;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a5e1a;rounded=1;arcSize=5;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="540" y="100" width="380" height="380" as="geometry" />
+        </mxCell>
+
+        <!-- Game Aggregate -->
+        <mxCell id="agg_game" value="&lt;b&gt;Game&lt;/b&gt;&#xa;(Aggregate Root)&#xa;─────────────────&#xa;+ Id: Guid&#xa;+ Title: string&#xa;+ Description: string&#xa;+ Price: decimal&#xa;+ Genre: string&#xa;+ ReleaseYear: int&#xa;+ CreatedAt: DateTime" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD700;strokeColor=#CC9900;fontColor=#1a1a1a;fontSize=11;align=left;" vertex="1" parent="bc_catalog_container">
+          <mxGeometry x="90" y="60" width="200" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- Endpoints in Game Catalog -->
+        <mxCell id="ep_catalog" value="Endpoints (Admin):&#xa;GET    /api/games&#xa;POST   /api/games&#xa;PUT    /api/games/{id}&#xa;DELETE /api/games/{id}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a5e1a;fontSize=11;align=left;" vertex="1" parent="bc_catalog_container">
+          <mxGeometry x="90" y="280" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- BOUNDED CONTEXT 3: Promotions                                -->
+        <!-- ============================================================ -->
+        <mxCell id="bc_promo_container" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Promotions&lt;/font&gt;&lt;/b&gt;" style="swimlane;startSize=40;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#7d4e00;rounded=1;arcSize=5;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="100" width="420" height="380" as="geometry" />
+        </mxCell>
+
+        <!-- Promotion Aggregate -->
+        <mxCell id="agg_promo" value="&lt;b&gt;Promotion&lt;/b&gt;&#xa;(Aggregate Root)&#xa;─────────────────&#xa;+ Id: Guid&#xa;+ Title: string&#xa;+ Description: string&#xa;+ DiscountPercent: int (1-100)&#xa;+ StartsAt: DateTime&#xa;+ EndsAt: DateTime&#xa;+ CreatedAt: DateTime" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD700;strokeColor=#CC9900;fontColor=#1a1a1a;fontSize=11;align=left;" vertex="1" parent="bc_promo_container">
+          <mxGeometry x="20" y="60" width="200" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- PromotionGame Entity -->
+        <mxCell id="ent_promo_game" value="&lt;b&gt;PromotionGame&lt;/b&gt;&#xa;(Entity)&#xa;─────────────────&#xa;+ PromotionId: Guid (FK)&#xa;+ GameId: Guid (FK)&#xa;+ AddedAt: DateTime" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1a1a1a;fontSize=11;align=left;" vertex="1" parent="bc_promo_container">
+          <mxGeometry x="240" y="60" width="160" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- Endpoints in Promotions -->
+        <mxCell id="ep_promo" value="Endpoints (Admin):&#xa;GET    /api/promotions&#xa;POST   /api/promotions&#xa;PUT    /api/promotions/{id}&#xa;DELETE /api/promotions/{id}&#xa;POST   /api/promotions/{id}/games/{gameId}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#7d4e00;fontSize=11;align=left;" vertex="1" parent="bc_promo_container">
+          <mxGeometry x="20" y="280" width="380" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- PromotionGame → Promotion edge -->
+        <mxCell id="e_pg_p" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#b85450;endArrow=ERmany;startArrow=ERone;exitX=0;exitY=0.5;" edge="1" source="ent_promo_game" target="agg_promo" parent="bc_promo_container">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- BOUNDED CONTEXT 4: Library                                   -->
+        <!-- ============================================================ -->
+        <mxCell id="bc_library_container" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Library&lt;/font&gt;&lt;/b&gt;" style="swimlane;startSize=40;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#6d1313;rounded=1;arcSize=5;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="540" y="580" width="420" height="320" as="geometry" />
+        </mxCell>
+
+        <!-- LibraryItem Entity -->
+        <mxCell id="ent_library" value="&lt;b&gt;LibraryItem&lt;/b&gt;&#xa;(Entity)&#xa;─────────────────&#xa;+ UserId: Guid (FK → User)&#xa;+ GameId: Guid (FK → Game)&#xa;+ AcquiredAt: DateTime&#xa;─────────────────&#xa;UK: (UserId, GameId)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD700;strokeColor=#CC9900;fontColor=#1a1a1a;fontSize=11;align=left;" vertex="1" parent="bc_library_container">
+          <mxGeometry x="110" y="60" width="200" height="180" as="geometry" />
+        </mxCell>
+
+        <!-- Endpoints in Library -->
+        <mxCell id="ep_library" value="Endpoints (User):&#xa;GET  /api/library&#xa;POST /api/library/{gameId}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#6d1313;fontSize=11;align=left;" vertex="1" parent="bc_library_container">
+          <mxGeometry x="110" y="260" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- CONTEXT RELATIONSHIPS (inter-context arrows)                 -->
+        <!-- ============================================================ -->
+
+        <!-- User Management → Library (User provides identity to Library) -->
+        <mxCell id="rel_user_library" value="&lt;b&gt;UserId reference&lt;/b&gt;&#xa;(Customer/Supplier)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#003399;strokeWidth=2;fontColor=#003399;fontSize=11;endArrow=open;startArrow=none;" edge="1" source="bc_user_container" target="bc_library_container" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="570" />
+              <mxPoint x="750" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Game Catalog → Library (Game provides identity to Library) -->
+        <mxCell id="rel_catalog_library" value="&lt;b&gt;GameId reference&lt;/b&gt;&#xa;(Customer/Supplier)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#1a5e1a;strokeWidth=2;fontColor=#1a5e1a;fontSize=11;endArrow=open;startArrow=none;" edge="1" source="bc_catalog_container" target="bc_library_container" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Game Catalog → Promotions (Game referenced in PromotionGame) -->
+        <mxCell id="rel_catalog_promo" value="&lt;b&gt;GameId reference&lt;/b&gt;&#xa;(Conformist)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#7d4e00;strokeWidth=2;fontColor=#7d4e00;fontSize=11;endArrow=open;startArrow=none;" edge="1" source="bc_catalog_container" target="bc_promo_container" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- User Management → Game Catalog (JWT Auth: Admin role gates writes) -->
+        <mxCell id="rel_user_catalog" value="&lt;b&gt;JWT Auth (Admin role)&lt;/b&gt;&#xa;(Open Host Service)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;strokeWidth=2;fontColor=#333333;fontSize=11;endArrow=open;dashed=1;" edge="1" source="bc_user_container" target="bc_catalog_container" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- User Management → Promotions (JWT Auth gates Admin writes) -->
+        <mxCell id="rel_user_promo" value="&lt;b&gt;JWT Auth (Admin role)&lt;/b&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;strokeWidth=2;fontColor=#333333;fontSize=11;endArrow=open;dashed=1;" edge="1" source="bc_user_container" target="bc_promo_container" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="80" />
+              <mxPoint x="1210" y="80" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- LEGEND                                                        -->
+        <!-- ============================================================ -->
+        <mxCell id="legend_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="580" width="420" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_title" value="Legenda" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="585" width="120" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_ar" value="Aggregate Root" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD700;strokeColor=#CC9900;fontColor=#1a1a1a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="630" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_vo" value="Value Object" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6D0FF;strokeColor=#9673A6;fontColor=#1a1a1a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="675" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_ent" value="Entity" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1a1a1a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="720" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_cs" value="→ Customer/Supplier" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="260" y="630" width="210" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_conf" value="⇢ Conformist" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="260" y="665" width="210" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_ohs" value="╌╌▷ Open Host Service (JWT)" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="260" y="700" width="210" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_uk" value="UK = Unique Key (idempotência no DB)" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="100" y="760" width="350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_fk" value="FK = Foreign Key (referência entre contextos)" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="100" y="790" width="350" height="30" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

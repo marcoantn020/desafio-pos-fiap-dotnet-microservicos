@@ -7,5 +7,6 @@ public record GameResponse(
     decimal Price,
     string Genre,
     int ReleaseYear,
-    DateTime CreatedAt
+    DateTime CreatedAt,
+    decimal? PromotionalPrice = null
 );

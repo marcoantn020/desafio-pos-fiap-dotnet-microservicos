@@ -9,6 +9,7 @@
       "FCG.Monolith.Infrastructure/1.0.0": {
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
+          "FCG.Monolith.Application": "1.0.0",
           "FCG.Monolith.Domain": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.0",
@@ -220,6 +221,15 @@
           }
         }
       },
+      "FCG.Monolith.Application/1.0.0": {
+        "dependencies": {
+          "FCG.Monolith.Domain": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "runtime": {
+          "FCG.Monolith.Application.dll": {}
+        }
+      },
       "FCG.Monolith.Domain/1.0.0": {
         "runtime": {
           "FCG.Monolith.Domain.dll": {}
@@ -400,6 +410,11 @@
       "sha512": "sha512-D0TtrWOfoPdyYSlvOGaU9F1QR+qrbgJ/4eiEsQkIz7YQKIKkGXQldXukn6cYG9OahSq5UVMvyAIObECpH6Wglg==",
       "path": "system.identitymodel.tokens.jwt/7.5.0",
       "hashPath": "system.identitymodel.tokens.jwt.7.5.0.nupkg.sha512"
+    },
+    "FCG.Monolith.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "FCG.Monolith.Domain/1.0.0": {
       "type": "project",

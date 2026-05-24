@@ -8,6 +8,8 @@ public class AppDbContext : DbContext
     public DbSet<User> Users => Set<User>();
     public DbSet<Game> Games => Set<Game>();
     public DbSet<LibraryItem> LibraryItems => Set<LibraryItem>();
+    public DbSet<Promotion> Promotions => Set<Promotion>();
+    public DbSet<PromotionGame> PromotionGames => Set<PromotionGame>();
 
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 

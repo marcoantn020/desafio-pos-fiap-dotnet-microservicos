@@ -1,0 +1,49 @@
+<div class="page">
+  <div class="page-header">
+    <h2>Catálogo de Jogos</h2>
+    <p class="subtitle">{{ games.length }} jogos disponíveis</p>
+  </div>
+
+  @if (successMessage) {
+    <div class="alert alert-success" (click)="goToOrders()">
+      ✓ {{ successMessage }} <span class="link-hint">Ver pedidos →</span>
+    </div>
+  }
+
+  @if (error) {
+    <div class="alert alert-error">{{ error }}</div>
+  }
+
+  @if (loading) {
+    <div class="loading-grid">
+      @for (i of [1,2,3,4,5,6,8]; track i) {
+        <div class="game-card skeleton"></div>
+      }
+    </div>
+  } @else {
+    <div class="games-grid">
+      @for (game of games; track game.id) {
+        <div class="game-card">
+          <div class="game-cover">
+            <span class="game-icon">🎮</span>
+          </div>
+          <div class="game-info">
+            <h3 class="game-title">{{ game.title }}</h3>
+            <div class="game-price">{{ formatPrice(game.priceCents, game.currency) }}</div>
+          </div>
+          <button
+            class="btn-buy"
+            [class.loading]="buyingId === game.id"
+            [disabled]="!!buyingId"
+            (click)="buy(game)">
+            @if (buyingId === game.id) {
+              Comprando...
+            } @else {
+              Comprar
+            }
+          </button>
+        </div>
+      }
+    </div>
+  }
+</div>

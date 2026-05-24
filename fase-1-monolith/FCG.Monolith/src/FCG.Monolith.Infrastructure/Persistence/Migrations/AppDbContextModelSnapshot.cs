@@ -78,6 +78,57 @@ namespace FCG.Monolith.Infrastructure.Persistence.Migrations
                     b.ToTable("LibraryItems");
                 });
 
+            modelBuilder.Entity("FCG.Monolith.Domain.Entities.Promotion", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("character varying(1000)");
+
+                    b.Property<int>("DiscountPercent")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("EndsAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("StartsAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Promotions");
+                });
+
+            modelBuilder.Entity("FCG.Monolith.Domain.Entities.PromotionGame", b =>
+                {
+                    b.Property<Guid>("PromotionId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("GameId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AddedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("PromotionId", "GameId");
+
+                    b.HasIndex("GameId");
+
+                    b.ToTable("PromotionGames");
+                });
+
             modelBuilder.Entity("FCG.Monolith.Domain.Entities.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -131,6 +182,30 @@ namespace FCG.Monolith.Infrastructure.Persistence.Migrations
                     b.Navigation("Game");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("FCG.Monolith.Domain.Entities.PromotionGame", b =>
+                {
+                    b.HasOne("FCG.Monolith.Domain.Entities.Game", "Game")
+                        .WithMany()
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FCG.Monolith.Domain.Entities.Promotion", "Promotion")
+                        .WithMany("Games")
+                        .HasForeignKey("PromotionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Game");
+
+                    b.Navigation("Promotion");
+                });
+
+            modelBuilder.Entity("FCG.Monolith.Domain.Entities.Promotion", b =>
+                {
+                    b.Navigation("Games");
                 });
 
             modelBuilder.Entity("FCG.Monolith.Domain.Entities.User", b =>

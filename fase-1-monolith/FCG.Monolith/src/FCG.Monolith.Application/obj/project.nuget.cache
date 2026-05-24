@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "9F/sXWXbjuiviEDqQc+345x09P93wtWUmP/OteorMU8gSNTi0TpSu1nKULAzg97gNACxttMfCv8bm9iklOd4Vg==",
+  "success": true,
+  "projectFilePath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Application/FCG.Monolith.Application.csproj",
+  "expectedPackageFiles": [
+    "/home/marco/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

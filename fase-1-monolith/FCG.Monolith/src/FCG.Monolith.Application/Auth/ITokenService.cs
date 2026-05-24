@@ -1,6 +1,6 @@
 using FCG.Monolith.Domain.Entities;
 
-namespace FCG.Monolith.Infrastructure.Auth;
+namespace FCG.Monolith.Application.Auth;
 
 public interface ITokenService
 {

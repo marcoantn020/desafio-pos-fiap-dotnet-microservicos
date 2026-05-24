@@ -1,0 +1,155 @@
+<mxfile host="app.diagrams.net" modified="2026-05-24T00:00:00.000Z" version="21.0.0">
+  <diagram name="Event Storming - User Registration" id="es-user-registration">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="Event Storming — Fluxo de Registro de Usuário" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="30" width="700" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Timeline arrow -->
+        <mxCell id="timeline" value="Tempo →" style="endArrow=block;endFill=1;edgeStyle=orthogonalEdgeStyle;strokeColor=#666666;fontColor=#666666;fontSize=12;" edge="1" parent="1">
+          <mxGeometry x="80" y="320" width="100" height="60" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="timeline_end" value="" style="edgeStyle=none;endArrow=block;endFill=1;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry x="80" y="320" relative="1" as="geometry">
+            <mxPoint x="80" y="320" as="sourcePoint" />
+            <mxPoint x="1560" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== ACTOR: User ===== -->
+        <mxCell id="actor_user" value="👤 Usuário" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF69B4;strokeColor=#CC1166;fontColor=#1a1a1a;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="200" width="150" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ===== POLICY: Validate Email ===== -->
+        <mxCell id="policy_email" value="Política&#xa;Validar Formato&#xa;de Email" style="rhombus;whiteSpace=wrap;html=1;fillColor=#7030A0;strokeColor=#4B0082;fontColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="150" width="160" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- ===== POLICY: Validate Password ===== -->
+        <mxCell id="policy_password" value="Política&#xa;Validar Política&#xa;de Senha" style="rhombus;whiteSpace=wrap;html=1;fillColor=#7030A0;strokeColor=#4B0082;fontColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="330" width="160" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- ===== COMMAND: RegisterUser ===== -->
+        <mxCell id="cmd_register" value="Comando&#xa;RegisterUser" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050EF;strokeColor=#003399;fontColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="230" width="160" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ===== AGGREGATE: User ===== -->
+        <mxCell id="agg_user" value="Agregado&#xa;User" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFD700;strokeColor=#CC9900;fontColor=#1a1a1a;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="200" width="160" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Value Objects inside User aggregate -->
+        <mxCell id="vo_email" value="VO: Email&#xa;(formato válido)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC9900;fontColor=#1a1a1a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="780" y="310" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="vo_password" value="VO: Password&#xa;(8+ chars, upper+lower&#xa;+digit+special)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC9900;fontColor=#1a1a1a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="780" y="370" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== DOMAIN EVENT: UserRegistered ===== -->
+        <mxCell id="evt_registered" value="Evento&#xa;UserRegistered" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF8000;strokeColor=#CC6600;fontColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="200" width="160" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ===== DOMAIN EVENT: ValidationFailed ===== -->
+        <mxCell id="evt_failed" value="Evento&#xa;ValidationFailed&#xa;(email ou senha inválidos)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF8000;strokeColor=#CC6600;fontColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="430" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ===== READ MODEL: JWT Token Response ===== -->
+        <mxCell id="rm_jwt" value="Read Model&#xa;JWT Token Response&#xa;{ token, userId, role }" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#00B050;strokeColor=#006633;fontColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="200" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ===== EDGES ===== -->
+        <!-- Actor → Policy Email -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;" edge="1" source="actor_user" target="policy_email" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Actor → Policy Password -->
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;" edge="1" source="actor_user" target="policy_password" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Policy Email → Command RegisterUser -->
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;" edge="1" source="policy_email" target="cmd_register" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Policy Password → Command RegisterUser -->
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;" edge="1" source="policy_password" target="cmd_register" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Command → Aggregate -->
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;" edge="1" source="cmd_register" target="agg_user" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Aggregate → Event UserRegistered -->
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;" edge="1" source="agg_user" target="evt_registered" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Event → Read Model JWT -->
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;" edge="1" source="evt_registered" target="rm_jwt" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Policy → ValidationFailed (dashed) -->
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#CC0000;dashed=1;" edge="1" source="policy_email" target="evt_failed" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#CC0000;dashed=1;" edge="1" source="policy_password" target="evt_failed" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- VO links to Aggregate -->
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#CC9900;dashed=1;" edge="1" source="vo_email" target="agg_user" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#CC9900;dashed=1;" edge="1" source="vo_password" target="agg_user" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== LEGEND BOX ===== -->
+        <mxCell id="legend_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="400" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_title" value="Legenda" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="565" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_actor" value="Ator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF69B4;strokeColor=#CC1166;fontColor=#1a1a1a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="605" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_command" value="Comando" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050EF;strokeColor=#003399;fontColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="650" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_aggregate" value="Agregado" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFD700;strokeColor=#CC9900;fontColor=#1a1a1a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="695" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_event" value="Evento de Domínio" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF8000;strokeColor=#CC6600;fontColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="605" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_policy" value="Política" style="rhombus;whiteSpace=wrap;html=1;fillColor=#7030A0;strokeColor=#4B0082;fontColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="648" width="120" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_readmodel" value="Read Model" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#00B050;strokeColor=#006633;fontColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="700" width="120" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Endpoint annotation -->
+        <mxCell id="endpoint_note" value="POST /api/auth/register" style="shape=callout;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="540" y="120" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e_endpoint" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;dashed=1;" edge="1" source="endpoint_note" target="cmd_register" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

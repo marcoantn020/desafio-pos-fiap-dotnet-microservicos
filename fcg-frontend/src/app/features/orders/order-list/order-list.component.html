@@ -1,0 +1,41 @@
+<div class="page">
+  <div class="page-header">
+    <h2>Meus Pedidos</h2>
+  </div>
+
+  @if (error) {
+    <div class="alert alert-error">{{ error }}</div>
+  }
+
+  @if (loading) {
+    <div class="loading">Carregando pedidos...</div>
+  } @else if (orders.length === 0) {
+    <div class="empty-state">
+      <span class="empty-icon">🛒</span>
+      <p>Você ainda não fez nenhum pedido.</p>
+      <a class="btn-outline" href="/games">Ver catálogo</a>
+    </div>
+  } @else {
+    <div class="orders-list">
+      @for (order of orders; track order.id) {
+        <div class="order-card">
+          <div class="order-game">
+            <span class="game-icon">🎮</span>
+            <div>
+              <div class="game-title">{{ order.gameTitle }}</div>
+              <div class="order-date">{{ formatDate(order.placedAtUtc) }}</div>
+            </div>
+          </div>
+          <div class="order-price">{{ formatPrice(order.priceCents, order.currency) }}</div>
+          <div class="status-badge" [class]="'status-' + order.status.toLowerCase()">
+            @switch (order.status) {
+              @case ('Pending') { ⏳ Pendente }
+              @case ('Confirmed') { ✓ Confirmado }
+              @case ('Cancelled') { ✗ Cancelado }
+            }
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>

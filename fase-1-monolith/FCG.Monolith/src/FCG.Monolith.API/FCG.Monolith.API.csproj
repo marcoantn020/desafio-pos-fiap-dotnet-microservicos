@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FCG.Monolith.Application\FCG.Monolith.Application.csproj" />
     <ProjectReference Include="..\FCG.Monolith.Domain\FCG.Monolith.Domain.csproj" />
     <ProjectReference Include="..\FCG.Monolith.Infrastructure\FCG.Monolith.Infrastructure.csproj" />
   </ItemGroup>

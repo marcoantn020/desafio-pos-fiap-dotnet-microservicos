@@ -1,0 +1,39 @@
+<div class="page">
+  <div class="page-header">
+    <h2>Minha Biblioteca</h2>
+    @if (!loading) {
+      <p class="subtitle">{{ items.length }} jogo{{ items.length !== 1 ? 's' : '' }}</p>
+    }
+  </div>
+
+  @if (error) {
+    <div class="alert alert-error">{{ error }}</div>
+  }
+
+  @if (loading) {
+    <div class="loading">Carregando biblioteca...</div>
+  } @else if (items.length === 0) {
+    <div class="empty-state">
+      <span class="empty-icon">📚</span>
+      <p>Sua biblioteca está vazia. Compre jogos no catálogo!</p>
+      <a class="btn-outline" href="/games">Ver catálogo</a>
+    </div>
+  } @else {
+    <div class="library-grid">
+      @for (item of items; track item.id) {
+        <div class="library-card">
+          <div class="game-cover">
+            <span class="game-icon">🎮</span>
+            <div class="owned-badge">✓ Adquirido</div>
+          </div>
+          <div class="game-info">
+            <h3 class="game-title">{{ item.gameTitle }}</h3>
+            <div class="acquire-date">Adquirido em {{ formatDate(item.acquiredAtUtc) }}</div>
+            <div class="game-price">{{ formatPrice(item.priceCents, item.currency) }}</div>
+          </div>
+          <button class="btn-play">▶ Jogar</button>
+        </div>
+      }
+    </div>
+  }
+</div>

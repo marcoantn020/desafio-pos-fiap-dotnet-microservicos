@@ -1114,6 +1114,20 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "FCG.Monolith.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "FCG.Monolith.Domain": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FCG.Monolith.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FCG.Monolith.Application.dll": {}
+        }
+      },
       "FCG.Monolith.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -1129,6 +1143,7 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
+          "FCG.Monolith.Application": "1.0.0",
           "FCG.Monolith.Domain": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.0",
@@ -3085,6 +3100,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "FCG.Monolith.Application/1.0.0": {
+      "type": "project",
+      "path": "../FCG.Monolith.Application/FCG.Monolith.Application.csproj",
+      "msbuildProject": "../FCG.Monolith.Application/FCG.Monolith.Application.csproj"
+    },
     "FCG.Monolith.Domain/1.0.0": {
       "type": "project",
       "path": "../FCG.Monolith.Domain/FCG.Monolith.Domain.csproj",
@@ -3099,6 +3119,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "BCrypt.Net-Next >= 4.0.3",
+      "FCG.Monolith.Application >= 1.0.0",
       "FCG.Monolith.Domain >= 1.0.0",
       "FCG.Monolith.Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.0",
@@ -3134,6 +3155,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Application/FCG.Monolith.Application.csproj": {
+              "projectPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Application/FCG.Monolith.Application.csproj"
+            },
             "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/FCG.Monolith.Domain.csproj": {
               "projectPath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Domain/FCG.Monolith.Domain.csproj"
             },

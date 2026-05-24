@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8WWO2julHD8srsa5E4nKrJRlqroXSYXc0euaYs2D6uWJpDS+Bb7PFkltPm2G6C19DKygguh4TgSC9MfTaEhSsA==",
+  "dgSpecHash": "VTuGIXxoKYyA72vCFPQZ37dUZEFyivA5y9TXuYlQ1xffJh94I3UcjN0cvadwFP1FFmRJKBnq+y4MCMFYqlaSzw==",
   "success": true,
   "projectFilePath": "/home/marco/POS-FIAP/desafio-pos-fiap-dotnet-microservicos/fase-1-monolith/FCG.Monolith/src/FCG.Monolith.Infrastructure/FCG.Monolith.Infrastructure.csproj",
   "expectedPackageFiles": [

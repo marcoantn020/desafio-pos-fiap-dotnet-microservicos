@@ -1,0 +1,156 @@
+<mxfile host="app.diagrams.net" modified="2026-05-24T00:00:00.000Z" version="21.0.0">
+  <diagram name="Event Storming - Library Acquisition" id="es-library">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="Event Storming — Adição de Jogo à Biblioteca do Usuário" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="30" width="900" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Timeline arrow -->
+        <mxCell id="timeline_end" value="Tempo →" style="endArrow=block;endFill=1;strokeColor=#666666;fontColor=#666666;fontSize=12;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="300" as="sourcePoint" />
+            <mxPoint x="1560" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== ACTOR: User ===== -->
+        <mxCell id="actor_user" value="👤 Usuário&#xa;(autenticado)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF69B4;strokeColor=#CC1166;fontColor=#1a1a1a;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="150" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ===== POLICY: GameMustExist ===== -->
+        <mxCell id="policy_game_exist" value="Política&#xa;GameMustExist&#xa;(jogo existe no catálogo?)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#7030A0;strokeColor=#4B0082;fontColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="290" y="140" width="180" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- ===== POLICY: NoDuplicateInLibrary ===== -->
+        <mxCell id="policy_no_dup" value="Política&#xa;NoDuplicateInLibrary&#xa;(jogo já na biblioteca?)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#7030A0;strokeColor=#4B0082;fontColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="140" width="190" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- ===== COMMAND: AddGameToLibrary ===== -->
+        <mxCell id="cmd_add_library" value="Comando&#xa;AddGameToLibrary" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050EF;strokeColor=#003399;fontColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="180" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Endpoint annotation -->
+        <mxCell id="endpoint_note" value="POST /api/library/{gameId}" style="shape=callout;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="810" y="100" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ep" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;dashed=1;" edge="1" source="endpoint_note" target="cmd_add_library" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== AGGREGATE: LibraryItem ===== -->
+        <mxCell id="agg_library" value="Agregado&#xa;LibraryItem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFD700;strokeColor=#CC9900;fontColor=#1a1a1a;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="150" width="160" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- LibraryItem fields -->
+        <mxCell id="lib_fields" value="UserId (FK)&#xa;GameId (FK)&#xa;AcquiredAt&#xa;UK: (UserId, GameId)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#CC9900;fontColor=#1a1a1a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="250" width="175" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- ===== DOMAIN EVENT: GameAddedToLibrary ===== -->
+        <mxCell id="evt_added" value="Evento&#xa;GameAddedToLibrary" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF8000;strokeColor=#CC6600;fontColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="150" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ===== DOMAIN EVENT: GameNotFound (error path) ===== -->
+        <mxCell id="evt_not_found" value="Evento&#xa;GameNotFound&#xa;(404 Not Found)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF8000;strokeColor=#CC6600;fontColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="290" y="380" width="180" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- ===== DOMAIN EVENT: DuplicateLibraryEntry (error path) ===== -->
+        <mxCell id="evt_duplicate" value="Evento&#xa;DuplicateLibraryEntry&#xa;(409 Conflict)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF8000;strokeColor=#CC6600;fontColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="380" width="190" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- ===== READ MODEL: User Library ===== -->
+        <mxCell id="rm_library" value="Read Model&#xa;User Library&#xa;GET /api/library" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#00B050;strokeColor=#006633;fontColor=#ffffff;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="280" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- DB constraint note -->
+        <mxCell id="db_note" value="Constraint DB:&#xa;UNIQUE (UserId, GameId)&#xa;garante idempotência" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="360" width="175" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- JWT note -->
+        <mxCell id="jwt_note" value="JWT válido obrigatório&#xa;(claim: sub = UserId)" style="shape=note;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="380" width="170" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== EDGES ===== -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;" edge="1" source="actor_user" target="policy_game_exist" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;" edge="1" source="policy_game_exist" target="policy_no_dup" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;" edge="1" source="policy_no_dup" target="cmd_add_library" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;" edge="1" source="cmd_add_library" target="agg_library" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;" edge="1" source="agg_library" target="evt_added" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#555555;" edge="1" source="evt_added" target="rm_library" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Error paths (dashed red) -->
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#CC0000;dashed=1;" edge="1" source="policy_game_exist" target="evt_not_found" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#CC0000;dashed=1;" edge="1" source="policy_no_dup" target="evt_duplicate" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Fields link -->
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#CC9900;dashed=1;" edge="1" source="lib_fields" target="agg_library" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- DB note link -->
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#CC9900;dashed=1;" edge="1" source="db_note" target="lib_fields" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== LEGEND BOX ===== -->
+        <mxCell id="legend_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="400" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_title" value="Legenda" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="565" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_actor" value="Ator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF69B4;strokeColor=#CC1166;fontColor=#1a1a1a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="605" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_command" value="Comando" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050EF;strokeColor=#003399;fontColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="650" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_aggregate" value="Agregado" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFD700;strokeColor=#CC9900;fontColor=#1a1a1a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="100" y="695" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_event" value="Evento de Domínio" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF8000;strokeColor=#CC6600;fontColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="605" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_policy" value="Política" style="rhombus;whiteSpace=wrap;html=1;fillColor=#7030A0;strokeColor=#4B0082;fontColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="648" width="130" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_readmodel" value="Read Model" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#00B050;strokeColor=#006633;fontColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="700" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_error_note" value="→ Caminho de erro (linha tracejada vermelha)" style="text;html=1;strokeColor=none;fillColor=none;fontSize=11;fontColor=#CC0000;" vertex="1" parent="1">
+          <mxGeometry x="100" y="745" width="350" height="30" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
